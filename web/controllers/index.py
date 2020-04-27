@@ -33,3 +33,4 @@ def index():
     # 更新数据的问题
     StatDailySite.query.all()
     return ops_render("index/index.html",resp_data)
+   

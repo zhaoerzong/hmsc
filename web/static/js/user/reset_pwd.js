@@ -4,14 +4,12 @@ var mod_pwd_ops = {
         this.eventBind()
     },
     eventBind:function(){
-        $('#save').click(function(){
-            
+        $("#save").click(function(){
             var btn_target = $(this)
-            if (btn_target.hasClass("disabled")){
-                alert("正在处理，请稍后再试~~~")
+            if (btn_target.hasClass("disabled")) {
+                alert("重置正在进行中，请稍后再试")
                 return;
             }
-            console.log("reset_pwd")
 
             var old_password = $("#old_password").val()
             var new_password = $("#new_password").val()
@@ -20,12 +18,13 @@ var mod_pwd_ops = {
                 alert("请输入原密码")
                 return false;
             }
-            if (!new_password || new_password.length < 6){
+            if (!new_password || new_password.length < 6) {
                 alert("请输入不少于6位的新密码")
                 return false
             }
-            btn_target.addClass("disabled");
-            
+
+            btn_target.addClass("disabled")
+
             $.ajax({
                 url:common_ops.buildUrl("/user/reset-pwd"),
                 type:"POST",
