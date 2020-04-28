@@ -7,7 +7,7 @@ from web.controllers.static import route_static
 
 
 # 拦截器路由
-from web.interceptos.AuthInterceptor import *
+from web.interceptors.AuthInterceptor import *
 
 # 蓝图路由
 app.register_blueprint(route_index,url_prefix="/")
