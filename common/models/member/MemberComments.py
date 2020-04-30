@@ -4,8 +4,6 @@ from sqlalchemy.schema import FetchedValue
 from flask_sqlalchemy import SQLAlchemy
 from application import db
 
-
-
 class MemberComment(db.Model):
     __tablename__ = 'member_comments'
 
